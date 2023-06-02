@@ -16,7 +16,7 @@ routes = os.environ["ROUTE"]
 im = Image.open('image/collabera_digital.ico')
 
 st.set_page_config(
-    page_title='Multi-Touch-Attribution-markov-chain', 
+    page_title='ResuLLMe', 
     page_icon = im,  
     initial_sidebar_state = 'auto'
 )
