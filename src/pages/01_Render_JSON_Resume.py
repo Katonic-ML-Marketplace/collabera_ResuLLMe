@@ -7,7 +7,7 @@ from templates import generate_latex, template_commands
 from render import render_latex
 import json
 
-IFRAME = '<iframe src="https://ghbtns.com/github-btn.html?user=IvanIsCoding&repo=ResuLLMe&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>'
+IFRAME = '<iframe src="https://ghbtns.com/github-btn.html?user=Katonic-ML-Marketplace&repo=collabera_ResuLLMe&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>'
 
 st.markdown(
     f"""
