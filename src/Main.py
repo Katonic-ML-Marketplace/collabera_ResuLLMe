@@ -72,8 +72,9 @@ if uploaded_file is not None:
     else:
         openai_api_key = os.getenv("OPENAI_API_KEY")
 
+    st.markdown("[See Template](http://0.0.0.0:8050)")
     chosen_option = st.selectbox(
-        "Select a template to use for your resume [(see templates)](/Template_Gallery)",
+        "Select a template to use for your resume [(see templates)](http://0.0.0.0:8050/Template_Gallery)",
         template_options,
         index=0,  # default to the first option
     )
