@@ -11,9 +11,9 @@ ResuLLMe is a prototype that uses Large Language Models (LLMs) to tailor résum�
 # 🛠 How It Works
 ResuLLMe receives your previous CV as a PDF or Word Document. Then, it uses LLMs to:
 
-Improve the résumé following published résumé guidelines by well-reputed schools
-Convert the résumés to a JSON Resume format
-Render the JSON resume using LaTeX to generate a new PDF of the enhanced resume
+- Improve the résumé following published résumé guidelines by well-reputed schools
+- Convert the résumés to a JSON Resume format
+- Render the JSON resume using LaTeX to generate a new PDF of the enhanced resume
 # 🏃 Running
 
 To run ResuLLMe locally, the simplest way is to use Docker:
