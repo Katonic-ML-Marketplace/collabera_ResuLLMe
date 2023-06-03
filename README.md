@@ -20,7 +20,7 @@ To run ResuLLMe locally, the simplest way is to use Docker:
 
     docker-compose up -d
 
-🪄 Installation Instructions for Running Natively
+### 🪄 Installation Instructions for Running Natively
 To run the app without Docker, you will need to install two things for the app to work. The first item is to install the Python dependencies:
 
 pip install -r requirements.txt
