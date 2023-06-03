@@ -2,6 +2,8 @@
 
 ResuLLMe Open in Streamlit  
 
+![image](https://github.com/Katonic-ML-Marketplace/collabera_ResuLLMe/assets/124993015/eeae0104-b63d-4aef-bcce-05487ffddb0f)
+
 🚀 Concept
 ResuLLMe is a prototype that uses Large Language Models (LLMs) to tailor résumés. It's goal is to enhance résumés to help candidates avoid common mistakes that occur while applying for jobs. It is like a smart career advisor to check your résumé.
 
