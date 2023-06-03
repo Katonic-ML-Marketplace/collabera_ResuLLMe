@@ -14,7 +14,7 @@ Render the JSON resume using LaTeX to generate a new PDF of the enhanced resume
 🏃 Running
 To run ResuLLMe locally, the simplest way is to use Docker:
 
-docker-compose up -d
+    docker-compose up -d
 
 🪄 Installation Instructions for Running Natively
 To run the app without Docker, you will need to install two things for the app to work. The first item is to install the Python dependencies:
@@ -22,22 +22,22 @@ To run the app without Docker, you will need to install two things for the app t
 pip install -r requirements.txt
 The second item is to install the LaTeX packages:
 
-xargs sudo apt install -y < packages.txt
+    xargs sudo apt install -y < packages.txt
 
 if dpkg issue occured while running above command, follow further steps
 
-sudo rm /var/cache/debconf/*.dat
+    sudo rm /var/cache/debconf/*.dat
 
-sudo dpkg --configure -a sudo apt install -f
+    sudo dpkg --configure -a sudo apt install -f
 
-sudo apt update
+    sudo apt update
 
-sudo apt upgrade
+    sudo apt upgrade
 
-xargs sudo apt install -y < packages.txt
+    xargs sudo apt install -y < packages.txt
 Lastly, to run ResuLLMe on katonic workspaces, execute:
 
-streamlit run Main.py --server.port 8050 --server.address 0.0.0.0
+    streamlit run Main.py --server.port 8050 --server.address 0.0.0.0
 
 
 
