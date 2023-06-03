@@ -25,7 +25,7 @@ To run the app without Docker, you will need to install two things for the app t
 
 The first item is to install the Python dependencies:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 The second item is to install the LaTeX packages:
 
     xargs sudo apt install -y < packages.txt
