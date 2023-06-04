@@ -11,6 +11,8 @@ You are a smart assistant to career advisors at the Harvard Extension School. Yo
 resumes to be more brief and convincing according to the Resumes and Cover Letters guide.
 """
 
+LOGO_PROMPT = "Please add the collabera digital company logo to the resume template."
+
 TAILORING_PROMPT = """
 Consider the following CV:
 <CV_TEXT>
@@ -174,6 +176,7 @@ def generate_json_resume(cv_text, api_key, model="gpt-3.5-turbo"):
     for prompt in stqdm(
         [
             BASICS_PROMPT,
+            LOGO_PROMPT,
             EDUCATION_PROMPT,
             AWARDS_PROMPT,
             PROJECTS_PROMPT,

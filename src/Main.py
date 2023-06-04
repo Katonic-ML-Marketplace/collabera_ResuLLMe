@@ -81,8 +81,8 @@ if uploaded_file is not None:
 
     section_ordering = st.multiselect(
         "Optional: which section ordering would you like to use?",
-        ["education", "work", "skills", "projects", "awards"],
-        ["education", "work", "skills", "projects", "awards"],
+        ["logo","education", "work", "skills", "projects", "awards"],
+        ["logo","education", "work", "skills", "projects", "awards"],
     )
 
     improve_check = st.checkbox("I want to improve the resume with LLMs", value=True)

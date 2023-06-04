@@ -47,6 +47,7 @@ def use_template(template_name, jinja_env, json_resume, prelim_section_ordering)
     EXTENSION = "tex.jinja"
 
     resume_template = jinja_env.get_template(f"{PREFIX}/resume.{EXTENSION}")
+    logo_template = jinja_env.get_template(f"{PREFIX}/logo.{EXTENSION}")
     basics_template = jinja_env.get_template(f"{PREFIX}/basics.{EXTENSION}")
     education_template = jinja_env.get_template(f"{PREFIX}/education.{EXTENSION}")
     work_template = jinja_env.get_template(f"{PREFIX}/work.{EXTENSION}")
@@ -63,6 +64,10 @@ def use_template(template_name, jinja_env, json_resume, prelim_section_ordering)
         sections["basics"] = basics_template.render(
             firstName=firstName, lastName=lastName, **json_resume["basics"]
         )
+
+    if "logo" in json_resume:
+        sections["logo"] = logo_template.render()
+
     if "education" in json_resume and len(json_resume["education"]) > 0:
         sections["education"] = education_template.render(
             schools=json_resume["education"], heading="Education"
@@ -95,6 +100,7 @@ def use_template(template_name, jinja_env, json_resume, prelim_section_ordering)
 def get_final_section_ordering(section_ordering):
     final_ordering = ["basics"]
     additional_ordering = section_ordering + [
+        "logo",
         "education",
         "work",
         "skills",
