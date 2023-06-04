@@ -72,17 +72,16 @@ if uploaded_file is not None:
     else:
         openai_api_key = os.getenv("OPENAI_API_KEY")
 
-    st.markdown("[See Template](http://0.0.0.0:8050)")
     chosen_option = st.selectbox(
-        "Select a template to use for your resume [(see templates)](http://0.0.0.0:8050/Template_Gallery)",
+        "Select a template to use for your resume [(see templates)](https://ds-dev.katonic.ai/ws-f88e2be4-3582-4d9f-8fcb-c47164f332bd-6433ce8d29e7aa2b5578f931/8050/Template_Gallery)",
         template_options,
         index=0,  # default to the first option
     )
 
     section_ordering = st.multiselect(
         "Optional: which section ordering would you like to use?",
-        ["logo","education", "work", "skills", "projects", "awards"],
-        ["logo","education", "work", "skills", "projects", "awards"],
+        ["education", "work", "skills", "projects", "awards"],
+        ["education", "work", "skills", "projects", "awards"],
     )
 
     improve_check = st.checkbox("I want to improve the resume with LLMs", value=True)

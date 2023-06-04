@@ -23,6 +23,6 @@ st.markdown(
 
 st.markdown(
     """
-We will provide the link to Overleaf once the template gets accepted into the Gallery.
+You can now Edit the Latex that you downloaded for your Resume on [Overleaf](https://github.com/Katonic-ML-Marketplace/collabera_ResuLLMe/blob/main/.github/Turing.json)
 """
 )

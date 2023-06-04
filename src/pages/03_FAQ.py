@@ -38,11 +38,11 @@ st.markdown(
 Sometimes, LLMs can hallucinate and produce information that is not correct. If this happend to your resume,
 there are two options to editing it:
 * Download the JSON file, manually edit it using a text editor and [render it again by going to Render JSON Resume](/Render_JSON_Resume)
-* Download the LaTeX file [and edit it on Overleaf (or your favorite LaTeX editor)](/Edit_LaTeX_on_Overleaf)
+* Download the LaTeX file [and edit it on Overleaf (or your favorite LaTeX editor)](https://www.overleaf.com/)
 
 ## What is the JSON schema for the Resume?
 
-We follow a subset of the JSON Resume Schema. You can look at [Alan Turing's JSON Resume for an example of the schema](https://github.com/IvanIsCoding/ResuLLMe/blob/main/.github/Turing.json).
+We follow a subset of the JSON Resume Schema. You can look at [Alan Turing's JSON Resume for an example of the schema](https://github.com/Katonic-ML-Marketplace/collabera_ResuLLMe/blob/main/.github/Turing.json).
 
 ## Is an OpenAI API Key requried to run the application?
 
