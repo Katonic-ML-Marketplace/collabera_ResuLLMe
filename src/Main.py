@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit_ext as ste
 import os
 import openai
+import time
 
 from doc_utils import extract_text_from_upload
 from templates import generate_latex, template_commands
@@ -59,10 +60,12 @@ uploaded_file = st.file_uploader("Choose a file", type=["pdf", "docx", "txt", "j
 
 template_options = list(template_commands.keys())
 
-if uploaded_file is not None:
-    # Get the CV data that we need to convert to json
-    text = extract_text_from_upload(uploaded_file)
+template_join = dict(zip(["Company A","Company B","Company C","Company D","Company E","Company F","Company G"],template_options))
 
+if uploaded_file is not None:
+    strt_time =time.time()
+    text = extract_text_from_upload(uploaded_file)
+    print("extracttion_stimated_time",time.time()-strt_time)
     # If not in the environment variables, we ask for the OpenAI API Key
     if not os.getenv("OPENAI_API_KEY"):
         openai_api_key = st.text_input(
@@ -74,10 +77,12 @@ if uploaded_file is not None:
 
     chosen_option = st.selectbox(
         "Select a template to use for your resume [(see templates)](https://ds-dev.katonic.ai/ws-f88e2be4-3582-4d9f-8fcb-c47164f332bd-6433ce8d29e7aa2b5578f931/8050/Template_Gallery)",
-        template_options,
+        ["Company A","Company B","Company C","Company D","Company E","Company F","Company G"],
         index=0,  # default to the first option
     )
 
+    chosen_option = template_join[chosen_option]
+    print("*****************",chosen_option)
     section_ordering = st.multiselect(
         "Optional: which section ordering would you like to use?",
         ["education", "work", "skills", "projects", "awards"],
@@ -89,15 +94,24 @@ if uploaded_file is not None:
     generate_button = st.button("Generate Resume")
 
     if generate_button:
+
         try:
             if improve_check:
                 with st.spinner("Tailoring the resume"):
+                    str_time = time.time()
                     text = tailor_resume(text, openai_api_key)
+                    print("tailor_resume",time.time()-str_time)
 
+            str_time0 = time.time()
             json_resume = generate_json_resume(text, openai_api_key)
+            print("json_resume-estim",time.time()-str_time0)
+            str_time1 = time.time()
             latex_resume = generate_latex(chosen_option, json_resume, section_ordering)
-
+            print("latex_resume-estim",time.time()-str_time1)
+            str_time2= time.time()
             resume_bytes = render_latex(template_commands[chosen_option], latex_resume)
+            print("render_latex-estim",time.time()-str_time2)
+            print("generate-button-estimate",time.time()-str_time)
 
             col1, col2, col3 = st.columns(3)
 
@@ -132,3 +146,4 @@ if uploaded_file is not None:
                 "It looks like you do not have OpenAI API credits left. Check [OpenAI's usage webpage for more information](https://platform.openai.com/account/usage)"
             )
             st.write(e)
+print("-------------------")

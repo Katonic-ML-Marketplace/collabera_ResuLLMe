@@ -168,7 +168,6 @@ interface Work {
 Write a work section for the candidate according to the Work schema. Include only the work experience and not the project experience. For each work experience, provide  a company name, position name, start and end date, and bullet point for the highlights. Follow the Harvard Extension School Resume guidelines and phrase the highlights with the STAR methodology
 """
 
-
 def generate_json_resume(cv_text, api_key, model="gpt-3.5-turbo"):
     """Generate a JSON resume from a CV text"""
     sections = []
@@ -192,6 +191,7 @@ def generate_json_resume(cv_text, api_key, model="gpt-3.5-turbo"):
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": filled_prompt},
             ],
+            temperature = 0,
             api_key=api_key,
         )
 
@@ -223,6 +223,7 @@ def tailor_resume(cv_text, api_key, model="gpt-3.5-turbo"):
                 {"role": "system", "content": SYSTEM_TAILORING},
                 {"role": "user", "content": filled_prompt},
             ],
+            temperature = 0,
             api_key=api_key,
         )
 

@@ -47,6 +47,7 @@ uploaded_file = st.file_uploader("Choose a file", type=["json"])
 template_options = list(template_commands.keys())
 
 if uploaded_file is not None:
+    str_time = time.time()
     # Get the CV data that we need to convert to json
     text = extract_text_from_upload(uploaded_file)
 
